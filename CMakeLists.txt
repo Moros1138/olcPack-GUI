@@ -46,6 +46,12 @@ file(
 # Executable aka binary output
 add_executable(${CMAKE_PROJECT_NAME} ${SourceFiles})
 
+# wxWidgets Options
+set(wxBUILD_SHARED OFF)
+set(wxUSE_GUI ON)
+set(wxBUILD_PRECOMP OFF)
+set(wxBUILD_MONOLITHIC OFF)
+
 add_subdirectory(third_party/wxWidgets)
 target_link_libraries(${CMAKE_PROJECT_NAME} wx::net wx::core wx::base)
 
